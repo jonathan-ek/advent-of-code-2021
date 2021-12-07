@@ -1,5 +1,5 @@
 def main():
-    with open('input_01.txt', 'r') as fp:
+    with open('input/01.txt', 'r') as fp:
         data = [int(x) for x in fp.readlines()]
         prev = None
         prev_prev = None

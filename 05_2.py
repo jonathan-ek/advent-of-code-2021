@@ -2,7 +2,7 @@ import collections
 
 
 def main():
-    with open('input_05.txt', 'r') as fp:
+    with open('input/05.txt', 'r') as fp:
         data = [[tuple(int(z) for z in y.split(',')) for y in x.split(' -> ')] for x in fp.readlines()]
         touched = []
         for start, end in data:

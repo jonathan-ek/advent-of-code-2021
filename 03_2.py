@@ -10,7 +10,7 @@ def get_one_count(data):
 
 
 def main():
-    with open('input_03.txt', 'r') as fp:
+    with open('input/03.txt', 'r') as fp:
         original_data = [x.strip() for x in fp.readlines()]
         data = [*original_data]
         word_length = len(data[0])

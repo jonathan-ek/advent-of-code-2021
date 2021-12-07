@@ -1,5 +1,5 @@
 def main():
-    with open('input_03.txt', 'r') as fp:
+    with open('input/03.txt', 'r') as fp:
         data = [x.strip() for x in fp.readlines()]
         count = []
         for d in data:

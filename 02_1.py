@@ -1,5 +1,5 @@
 def main():
-    with open('input_02.txt', 'r') as fp:
+    with open('input/02.txt', 'r') as fp:
         data = [(x.split(' ')[0], int(x.split(' ')[1])) for x in fp.readlines()]
         forward = 0
         depth = 0

@@ -1,5 +1,5 @@
 def main():
-    with open('input_06.txt', 'r') as fp:
+    with open('input/06.txt', 'r') as fp:
         state = [int(x) for x in fp.readlines()[0].split(',')]
         print(state)
         for r in range(80):

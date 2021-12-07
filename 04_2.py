@@ -14,7 +14,7 @@ class Plan:
 
 
 def main():
-    with open('input_04.txt', 'r') as fp:
+    with open('input/04.txt', 'r') as fp:
         lines = fp.readlines()
         numbers = [int(x) for x in lines[0].split(',')]
         lines = lines[1:]

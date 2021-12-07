@@ -1,5 +1,5 @@
 def main():
-    with open('input_07.txt', 'r') as fp:
+    with open('input/07.txt', 'r') as fp:
         data = [int(x) for x in fp.readlines()[0].split(',')]
         d_min = min(data)
         d_max = max(data)
