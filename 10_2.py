@@ -8,14 +8,15 @@ def main():
             '>': '<',
         }
         value_lookup = {
-            '(': 3,
-            '[': 57,
-            '{': 1197,
-            '<': 25137,
+            '(': 1,
+            '[': 2,
+            '{': 3,
+            '<': 4,
         }
-        sum = 0
+        scores = []
         for row in data:
             open_blocks = []
+            discard = False
             for character in row:
                 if character in "([{<":
                     open_blocks.append(character)
@@ -23,9 +24,16 @@ def main():
                     mc = matching[character]
                     expected = open_blocks.pop(-1)
                     if mc != expected:
-                        sum += value_lookup[mc]
-                        continue
-        print(sum)
+                        discard = True
+            if not discard:
+                line_sum = 0
+                for character in reversed(open_blocks):
+                    line_sum *= 5
+                    line_sum += value_lookup[character]
+                scores.append(line_sum)
+
+        print(sorted(scores)[int((len(scores)-1)/2)])
+
 
 if __name__ == '__main__':
     main()
