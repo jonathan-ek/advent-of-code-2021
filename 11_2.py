@@ -35,17 +35,16 @@ def main():
     with open('input/11.txt', 'r') as fp:
         data = [[int(y) for y in list(x.strip())] for x in fp.readlines()]
         count = 0
-        for step in range(100):
+        while True:
+            count += 1
             data = [[d+1if d < 9 else 0 for d in row] for row in data]
             visited = []
             for y in range(len(data)):
                 for x in range(len(data[y])):
                     if data[y][x] == 0 and (x, y) not in visited:
-                        count += flash((x, y), data, visited)
-            if step == 1:
-                for d in data:
-                    print("".join([str(x) for x in d]))
-                
+                        flash((x, y), data, visited)
+            if all([all([v == 0 for v in row]) for row in data]):
+                break
         print(count)
 
 
