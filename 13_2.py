@@ -9,9 +9,15 @@ def main():
                 dots = list(set([(x[0], x[1] if x[1] < index else 2*index - x[1]) for x in dots]))
             if axis == 'x':
                 dots = list(set([(x[0] if x[0] < index else 2*index - x[0], x[1]) for x in dots]))
-                break
-        print(len(dots))
-
+        max_x = max([x[0] for x in dots])
+        max_y = max([x[1] for x in dots])
+        for y in range(max_y+1):
+            for x in range(max_x+1):
+                if (x, y) in dots:
+                    print('#', end='')
+                else:
+                    print(' ', end='')
+            print('')
 
 
 if __name__ == '__main__':
