@@ -166,12 +166,15 @@ def simplify(pair):
 def main():
     with open('input/18.txt', 'r') as fp:
         data = [x.strip() for x in fp.readlines()]
-        data = [Pair.parse(json.loads(x)) for x in data]
-        current = data[0]
-        for e in data[1:]:
-            current += e
-            simplify(current)
-        print(current.magnitude)
+        max_mag = 0
+        for i, e in enumerate(data):
+            for j, f in enumerate(data):
+                if i == j:
+                    continue
+                current = Pair.parse(json.loads(e)) + Pair.parse(json.loads(f))
+                simplify(current)
+                max_mag = max([max_mag, current.magnitude])
+        print(max_mag)
 
 
 if __name__ == '__main__':
